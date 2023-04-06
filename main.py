@@ -14,8 +14,7 @@ class Msg(BaseModel):
     secret: str
 
 @app.get("/")
-async def root():
-    
+async def root():   
     return {"message": "Hello World. Welcome to FastAPI!"}
 
 
