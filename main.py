@@ -14,24 +14,41 @@ class Msg(BaseModel):
     secret: str
 
 @app.get("/")
-
 async def root():
-    return {"message": "Hello . Welcome to FastAPI!"}
+    
+    return {"message": "Hello World. Welcome to FastAPI!"}
 
 
-@app.get("/homepage")
-async def demo_get():
+@app.get("/javascript")
+async def javascript(url:str):
     driver=createDriver()
+    homepage = javascr(driver,url)
 
-    homepage = getGoogleHomepage(driver)
     driver.close()
     return homepage
 
-@app.post("/backgroundDemo")
-async def demo_post(inp: Msg, background_tasks: BackgroundTasks):
-    
-    background_tasks.add_task(doBackgroundTask, inp)
-    return {"message": "Success, background task started"}
+@app.get("/image")
+async def image(url:str):
+    driver=createDriver()
+    homepage = imageres(driver,url)
+    driver.close()
+    return homepage
+
+@app.get("/translate")
+async def translate(url:str):
+    driver=createDriver()
+    homepage = language(driver,url)
+    driver.close()
+    return homepage
+
+@app.get("/wrongsite")
+async def wrongsite(url:str):
+    driver=createDriver()
+    homepage= wrong(driver,url)
+    driver.close()
+    return homepage
+
+
     
 
 
