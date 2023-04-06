@@ -15,7 +15,7 @@ class Msg(BaseModel):
 
 @app.get("/")
 async def root():   
-    return {"message": "Hello World. Welcome to FastAPI!"}
+    return {"message": "Use /docs"}
 
 
 @app.get("/javascript")

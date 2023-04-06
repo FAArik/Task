@@ -67,5 +67,10 @@ def wrong(driver: webdriver.Chrome,url:str) -> str:
         if(detect(title.text)=="en"):
             return {"Fail":"Wrong site"}
         else:
-            return {"PASS":"Wrong site"}
+            return {"PASS":"Right site"}
     
+
+def doBackgroundTask(inp):
+    print("Doing background task")
+    print(inp.msg)
+    print("Done")
